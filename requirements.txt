@@ -1,0 +1,3 @@
+# AWS SDK for Python (required for containerized ECS Fargate runtime)
+# In AWS Lambda, boto3 is natively pre-installed in the Python runtime.
+boto3>=1.34.0

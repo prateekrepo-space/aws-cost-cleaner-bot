@@ -1,0 +1,21 @@
+# Gitleaks Configuration for Automated AWS Cost-Cleaner Bot
+# Official documentation: https://github.com/gitleaks/gitleaks
+
+title = "AWS Cost-Cleaner Gitleaks Config"
+
+[extend]
+# Inherits default Gitleaks rule set (AWS keys, Slack webhooks, GitHub tokens, etc.)
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for mock test values and documentation placeholders"
+paths = [
+  '''tests/''',
+  '''README\.md$''',
+  '''ecs/task_definition\.json$''',
+]
+regexes = [
+  '''hooks\.slack\.com/services/T00/B00/X00''',
+  '''<YOUR_ACCOUNT_ID>''',
+  '''<YOUR_REGION>''',
+]
