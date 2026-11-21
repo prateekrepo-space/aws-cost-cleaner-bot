@@ -1,0 +1,12 @@
+name: Test Quality Gate
+
+on: [push, pull_request]
+
+jobs:
+  quality-gate:
+    uses: prateekrepo-space/devops-quality-gate/.github/workflows/quality-gate.yml@v1
+    with:
+      port: "8000"
+      health_path: "/health"
+      load_test_path: "/items"
+      max_latency_ms: 300
